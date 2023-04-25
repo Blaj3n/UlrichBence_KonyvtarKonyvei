@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import modell.Konyv;
 
 public class KonyvtarForm extends javax.swing.JFrame {
@@ -155,8 +156,8 @@ public class KonyvtarForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookActionPerformed
-        konyvKeszit();
         uresKonyv();
+        konyvKeszit();
     }//GEN-LAST:event_addBookActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
@@ -186,6 +187,7 @@ public class KonyvtarForm extends javax.swing.JFrame {
         String szerzoEgy = author1.getText();
         String szerzoKet = author2.getText();
         String konyvCim = bookTitle.getText();
+        JOptionPane.showMessageDialog(null, "A könyv sikeresen fel lett véve.");
     }
 
     public void uresKonyv() {
@@ -193,6 +195,8 @@ public class KonyvtarForm extends javax.swing.JFrame {
         author2.setText("");
         bookTitle.setText("");
         release_date.setValue(0);
+        JOptionPane.showMessageDialog(null, "A mező(k) üresek!", "Hiba", JOptionPane.ERROR_MESSAGE);
+
     }
 
     public static void main(String args[]) {
