@@ -1,6 +1,11 @@
 package gui_nezet;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modell.Konyv;
 
 public class KonyvtarForm extends javax.swing.JFrame {
@@ -147,6 +152,25 @@ public class KonyvtarForm extends javax.swing.JFrame {
         konyvKeszit();
         uresKonyv();
     }//GEN-LAST:event_addBookActionPerformed
+
+    private void fajlMentes(String fp) {
+        String kimenet = "";
+        for (Konyv konyv : konyvek) {
+            kimenet += konyv.getCim();
+            kimenet += "/";
+            kimenet += konyv.getSzerzo1();
+            kimenet += "/";
+            kimenet += konyv.getSzerzo2();
+            kimenet += "/";
+            kimenet += konyv.getKiadasi_ev();
+            kimenet += "\n";
+        }
+        try {
+            Files.write(Paths.get(fp), kimenet.getBytes());
+        } catch (IOException ex) {
+            Logger.getLogger(KonyvtarForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private void konyvKeszit() {
         String szerzoEgy = author1.getText();
