@@ -39,9 +39,9 @@ public class KonyvtarKonzol {
     }
 
     private void feltoltes() {
-        modell.Konyv k1 = new modell.Konyv("Ready Player one", "Ernest Cline", "", 2011);
-        modell.Konyv k2 = new modell.Konyv("Harry Potter és a bölcsek köve", "J. K. Rowling", "", 2022);
-        modell.Konyv k3 = new modell.Konyv("A Piros Alma", "Zöld Alma", "Piros Eper", 2023);
+        Konyv k1 = new Konyv("Ready Player one", "Ernest Cline", "", 2011);
+        Konyv k2 = new Konyv("Harry Potter és a bölcsek köve", "J. K. Rowling", "", 2022);
+        Konyv k3 = new Konyv("A Piros Alma", "Zöld Alma", "Piros Eper", 2023);
 
         konyvek.add(k1);
         konyvek.add(k2);
