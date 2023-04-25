@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import modell.Konyv;
 
 public class KonyvtarForm extends javax.swing.JFrame {
@@ -41,7 +42,7 @@ public class KonyvtarForm extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        close = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -80,7 +81,7 @@ public class KonyvtarForm extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(release_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(release_date, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(addBook, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -123,8 +124,13 @@ public class KonyvtarForm extends javax.swing.JFrame {
         jMenuItem1.setText("Frissít");
         jMenu2.add(jMenuItem1);
 
-        jMenuItem2.setText("Kilépés");
-        jMenu2.add(jMenuItem2);
+        close.setText("Kilépés");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
+        jMenu2.add(close);
 
         jMenuBar1.add(jMenu2);
 
@@ -152,6 +158,10 @@ public class KonyvtarForm extends javax.swing.JFrame {
         konyvKeszit();
         uresKonyv();
     }//GEN-LAST:event_addBookActionPerformed
+
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_closeActionPerformed
 
     private void fajlMentes(String fp) {
         String kimenet = "";
@@ -182,6 +192,7 @@ public class KonyvtarForm extends javax.swing.JFrame {
         author1.setText("");
         author2.setText("");
         bookTitle.setText("");
+        release_date.setValue(0);
     }
 
     public static void main(String args[]) {
@@ -221,6 +232,7 @@ public class KonyvtarForm extends javax.swing.JFrame {
     private javax.swing.JTextField author1;
     private javax.swing.JTextField author2;
     private javax.swing.JTextField bookTitle;
+    private javax.swing.JMenuItem close;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -230,7 +242,6 @@ public class KonyvtarForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSpinner release_date;
     // End of variables declaration//GEN-END:variables
