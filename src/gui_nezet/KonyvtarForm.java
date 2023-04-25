@@ -187,7 +187,6 @@ public class KonyvtarForm extends javax.swing.JFrame {
         String szerzoEgy = author1.getText();
         String szerzoKet = author2.getText();
         String konyvCim = bookTitle.getText();
-        JOptionPane.showMessageDialog(null, "A könyv sikeresen fel lett véve.");
     }
 
     public void uresKonyv() {
@@ -195,8 +194,6 @@ public class KonyvtarForm extends javax.swing.JFrame {
         author2.setText("");
         bookTitle.setText("");
         release_date.setValue(0);
-        JOptionPane.showMessageDialog(null, "A mező(k) üresek!", "Hiba", JOptionPane.ERROR_MESSAGE);
-
     }
 
     public static void main(String args[]) {
