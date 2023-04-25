@@ -6,21 +6,10 @@ import modell.Konyv;
 public class KonyvtarForm extends javax.swing.JFrame {
 
     private ArrayList<Konyv> konyvek;
-    
+
     public KonyvtarForm() {
         initComponents();
         konyvek = new ArrayList<>();
-    }
-    
-    private void konyvKeszit(){
-        String szerzoEgy = author1.getText();
-        String szerzoKet = author2.getText();
-        String konyvCim = bookTitle.getText();
-    }
-    public void uresKonyv(){
-        author1.setText("");
-        author2.setText("");
-        bookTitle.setText("");
     }
 
     /**
@@ -158,6 +147,18 @@ public class KonyvtarForm extends javax.swing.JFrame {
         konyvKeszit();
         uresKonyv();
     }//GEN-LAST:event_addBookActionPerformed
+
+    private void konyvKeszit() {
+        String szerzoEgy = author1.getText();
+        String szerzoKet = author2.getText();
+        String konyvCim = bookTitle.getText();
+    }
+
+    public void uresKonyv() {
+        author1.setText("");
+        author2.setText("");
+        bookTitle.setText("");
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
